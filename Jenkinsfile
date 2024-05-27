@@ -12,7 +12,7 @@ pipeline {
         }
 
         stage('Test') {
-            steps {
+            steps { 
                 script {
                     sh 'echo "Running tests..."'
                     sh 'pytest tests/'
