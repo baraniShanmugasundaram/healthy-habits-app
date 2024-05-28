@@ -19,6 +19,9 @@ pipeline {
             steps {
                 script {
                     bat 'echo Running tests...'
+                    bat 'echo PYTHONPATH=%PYTHONPATH%'
+                    bat 'dir %WORKSPACE%'
+                    bat 'dir %WORKSPACE%\\app'
                     bat 'pytest tests/'
                 }
             }
