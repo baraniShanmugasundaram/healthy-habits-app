@@ -22,7 +22,8 @@ pipeline {
                     bat 'echo PYTHONPATH=%PYTHONPATH%'
                     bat 'dir %WORKSPACE%'
                     bat 'dir %WORKSPACE%\\app'
-                    bat 'pytest tests/'
+                    bat 'type %WORKSPACE%\\app\\__init__.py'
+                    bat 'docker run -it --rm -v %cd%:/app -w /app healthy-habits-app sh -c "export PYTHONPATH=/app && pytest tests/"'
                 }
             }
         }
